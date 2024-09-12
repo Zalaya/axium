@@ -2,9 +2,7 @@
   "name": "moderation-bot",
   "version": "0.1.0",
   "main": "index.ts",
-  "scripts": {
-
-  },
+  "scripts": {},
   "keywords": [
     "Moderation",
     "Discord",
@@ -14,5 +12,9 @@
   ],
   "author": "Zalaya",
   "license": "ISC",
-  "description": "Powerful Discord Bot designed to efficiently moderate multiple Discord servers."
+  "description": "Powerful Discord Bot designed to efficiently moderate multiple Discord servers.",
+  "devDependencies": {
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2"
+  }
 }
