@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+node_modules/
+src/
+script/
+*.iml
+tsconfig.json
+.prettierrc
+package-lock.json
+LICENSE
+README.md
+nodemon.json

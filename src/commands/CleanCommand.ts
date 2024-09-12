@@ -1,4 +1,4 @@
-import { Command } from "./Command";
+import { Command } from "../interfaces/Command";
 import { ApplicationCommandOptionData, Client, CommandInteraction, TextChannel } from "discord.js";
 
 export class CleanCommand implements Command {
