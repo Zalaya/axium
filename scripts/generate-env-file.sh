@@ -3,7 +3,7 @@
 SOURCE_FILE=".env.example"
 TARGET_FILE=".env"
 
-cd "$(dirname "$0")/../.." || exit
+cd "$(dirname "$0")/.." || exit
 
 if [ -f "$TARGET_FILE" ]; then
     echo ".env file already exists, no need to copy."
