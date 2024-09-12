@@ -19,19 +19,22 @@ export class CleanCommand implements Command {
 
         if (!interaction.channel) {
             await interaction.reply({ content: "\"You can't use this command in a DM.\"", ephemeral: true});
+            return;
         }
 
         const channel = interaction.channel as TextChannel;
 
         if (!channel.permissionsFor(client.user!)?.has("MANAGE_MESSAGES")) {
             await interaction.reply({ content: "I don't have permission to manage messages in this channel.", ephemeral: true});
+            return;
         }
 
-        await channel.bulkDelete(amount + 1).then(() =>  {
-            interaction.reply(`Deleted ${amount} messages.`);
-        }).catch(() => {
-            interaction.reply({ content: "Couldn't delete messages.", ephemeral: true});
-        });
+        try {
+            await channel.bulkDelete(amount + 1);
+            await interaction.reply({ content: `Deleted ${amount} messages.`, ephemeral: true });
+        } catch (error) {
+            await interaction.reply({ content: "Couldn't delete messages.", ephemeral: true });
+        }
     }
 
 }
