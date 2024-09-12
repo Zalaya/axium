@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ext": "ts",
+  "exec": "npm run build && npm run start",
+  "ignore": [
+    "dist"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
