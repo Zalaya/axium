@@ -2,7 +2,13 @@
   "name": "moderation-bot",
   "version": "0.1.0",
   "main": "index.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsup src/index.ts --minify",
+    "start": "node --env-file .env dist/index.js",
+    "start:watch": "nodemon",
+    "install:production": "npm install --omit=dev",
+    "install:development": "npm install --include=dev"
+  },
   "keywords": [
     "Moderation",
     "Discord",
