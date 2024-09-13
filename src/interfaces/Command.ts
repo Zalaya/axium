@@ -1,11 +1,4 @@
-import {
-    ApplicationCommandOptionData,
-    Client,
-    CommandInteraction,
-    GuildMember,
-    PermissionFlagsBits,
-    PermissionsBitField
-} from "discord.js";
+import { ApplicationCommandOptionData, Client, CommandInteraction, GuildMember, PermissionFlagsBits, PermissionsBitField } from "discord.js";
 
 export abstract class Command {
 

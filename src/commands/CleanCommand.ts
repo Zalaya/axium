@@ -3,9 +3,9 @@ import { ApplicationCommandOptionData, Client, CommandInteraction, PermissionFla
 
 export class CleanCommand extends Command {
 
-    private name: string = "clean";
-    private description: string = "Cleans the chat by deleting a certain amount of messages.";
-    private options: ApplicationCommandOptionData[] = [
+    public name: string = "clean";
+    public description: string = "Cleans the chat by deleting a certain amount of messages.";
+    public options: ApplicationCommandOptionData[] = [
         {
             name: "amount",
             description: "The amount of messages to delete.",
@@ -13,7 +13,7 @@ export class CleanCommand extends Command {
             required: true
         }
     ];
-    protected readonly permissions: PermissionFlagsBits[] = [
+    private readonly permissions: PermissionFlagsBits[] = [
         PermissionFlagsBits.ManageMessages,
         PermissionFlagsBits.ReadMessageHistory
     ];
