@@ -4,12 +4,10 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsup src/index.ts --minify",
-    "start": "node --env-file .env dist/index.js",
-    "start:watch": "nodemon",
-    "clean": "rimraf node_modules/ package-lock.json dist/",
-    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
-    "install:production": "npm install --omit=dev",
-    "install:development": "npm install --include=dev"
+    "start": "bun run dist/index.js",
+    "dev": "tsup src/index.ts --watch --onSuccess \"bun run dist/index.js\"",
+    "clean": "bun unlink",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\""
   },
   "keywords": [
     "Moderation",
@@ -25,9 +23,7 @@
     "discord.js": "^14.16.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4",
     "prettier": "^3.3.3",
-    "rimraf": "^6.0.1",
     "tsup": "^8.2.4",
     "typescript": "^5.6.2"
   }
