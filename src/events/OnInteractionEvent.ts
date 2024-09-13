@@ -1,7 +1,7 @@
-import { Event } from "../interfaces/Event";
+import { Event } from "../core/interfaces/Event";
 import { CommandInteraction, Interaction } from "discord.js";
-import { Command } from "../interfaces/Command";
-import { commands } from "../constants/Commands";
+import { Command } from "../core/interfaces/Command";
+import { commands } from "../core/constants/Commands";
 
 export class OnInteractionEvent extends Event {
 
