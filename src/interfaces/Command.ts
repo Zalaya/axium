@@ -2,9 +2,9 @@ import { ApplicationCommandOptionData, Client, CommandInteraction, GuildMember, 
 
 export abstract class Command {
 
-    protected abstract readonly name: string;
-    protected abstract readonly description: string;
-    protected abstract readonly options: ApplicationCommandOptionData[];
+    public abstract readonly name: string;
+    public abstract readonly description: string;
+    public abstract readonly options: ApplicationCommandOptionData[];
     protected abstract readonly permissions: PermissionFlagsBits[];
 
     protected abstract handle(interaction: CommandInteraction, client: Client): Promise<void>;

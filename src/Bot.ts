@@ -11,7 +11,7 @@ export class Bot {
         this.client = new Client({ intents: intents });
     }
 
-    public async start(): void {
+    public async start(): Promise<void> {
         try {
             await this.client.login(process.env.TOKEN).then(() => {
                 this.registerEvents();
