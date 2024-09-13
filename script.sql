@@ -1,4 +1,0 @@
-DROP DATABASE IF EXISTS `nova_db`;
-CREATE DATABASE IF NOT EXISTS `nova_db`;
-
-USE `nova_db`;
