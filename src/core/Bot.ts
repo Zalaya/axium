@@ -18,7 +18,7 @@ export class Bot {
                 this.registerCommands();
             });
         } catch (error) {
-            console.error("An error occurred while trying to start the bot: ", error);
+            console.error(`An error occurred while trying to start the bot: ${error}`);
         }
     }
 
@@ -40,7 +40,7 @@ export class Bot {
                 }
             )
         } catch (error) {
-            console.error("Failed to register commands:", error);
+            console.error(`Failed to register commands: ${error}`);
         }
     }
 
