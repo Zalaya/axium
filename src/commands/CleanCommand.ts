@@ -3,9 +3,9 @@ import { ApplicationCommandOptionData, Client, CommandInteraction, PermissionFla
 
 export class CleanCommand extends Command {
 
-    public name: string = "clean";
-    public description: string = "Cleans the chat by deleting a certain amount of messages.";
-    public options: ApplicationCommandOptionData[] = [
+    public readonly name: string = "clean";
+    public readonly description: string = "Cleans the chat by deleting a certain amount of messages.";
+    public readonly options: ApplicationCommandOptionData[] = [
         {
             name: "amount",
             description: "The amount of messages to delete.",
