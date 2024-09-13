@@ -19,11 +19,7 @@ export abstract class Command {
             return;
         }
 
-        await this.handle(interaction, client).then(() => {
-            this.replySuccess(interaction);
-        }).catch((error) => {
-            this.replyError(interaction, error);
-        });
+        await this.handle(interaction, client);
     }
 
     private async checkChannel(interaction: CommandInteraction): Promise<boolean> {
@@ -44,14 +40,6 @@ export abstract class Command {
         }
 
         return true;
-    }
-
-    protected async replySuccess(interaction: CommandInteraction): Promise<void> {
-        await interaction.reply({ content: "Command executed successfully.", ephemeral: true });
-    }
-
-    protected async replyError(interaction: CommandInteraction, error: any): Promise<void> {
-        await interaction.reply({ content: `An error occurred: ${error.message}`, ephemeral: true });
     }
 
 }

@@ -28,10 +28,16 @@ export class KickCommand extends Command {
         const reason = interaction.options.get("reason")?.value as string || "No reason provided.";
 
         if (!member) {
+            await interaction.reply({ content: "The member was not found.", ephemeral: true });
             return;
         }
 
-        await member.kick(reason);
+        try {
+            await member.kick(reason);
+            await interaction.reply({ content: `${member.user.tag} has been kicked. Reason: ${reason}`, ephemeral: true });
+        } catch (error) {
+            await interaction.reply({ content: `Couldn't kick the member: ${error.message}`, ephemeral: true });
+        }
     }
 
 }

@@ -11,12 +11,6 @@ export class CleanCommand extends Command {
             description: "The amount of messages to delete.",
             type: 4,
             required: true
-        },
-        {
-            name: "reason",
-            description: "Reason for kicking the member.",
-            type: 3,
-            required: false
         }
     ];
     private readonly permissions: PermissionFlagsBits[] = [
@@ -24,11 +18,17 @@ export class CleanCommand extends Command {
         PermissionFlagsBits.ReadMessageHistory
     ];
 
-    protected async handle(interaction: CommandInteraction, client: Client): Promise<void> {
-        const amount = interaction.options.get("amount", true)?.value as number;
-        const channel = interaction.channel as TextChannel;
+    public async handle(interaction: CommandInteraction, client: Client): Promise<void> {
+        const amount = interaction.options.get("amount")?.value as number;
 
-        await channel.bulkDelete(amount + 1);
+        try {
+            const channel = interaction.channel as TextChannel;
+
+            await channel.bulkDelete(amount + 1);
+            await interaction.reply({ content: `Deleted ${amount} messages.`, ephemeral: true });
+        } catch (error) {
+            await interaction.reply({ content: "Couldn't delete messages.", ephemeral: true });
+        }
     }
 
 }
