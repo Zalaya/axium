@@ -1,5 +1,5 @@
 import { Event } from "../interfaces/Event";
-import {ChatInputCommandInteraction, CommandInteraction, Interaction} from "discord.js";
+import { ChatInputCommandInteraction, CommandInteraction, Interaction } from "discord.js";
 import { Command } from "../interfaces/Command";
 import { commands } from "../constants/Commands";
 
