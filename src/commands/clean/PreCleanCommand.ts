@@ -15,7 +15,15 @@ export class PreCleanCommand extends PreCommand {
 
         const requiredMessages = interaction.options.getInteger("amount") || 0;
 
-        return await this.checkMessages(interaction, requiredMessages);
+        if (!await this.checkAmount(interaction, requiredMessages)) {
+            return false;
+        }
+
+        if (!await this.checkMessages(interaction, requiredMessages)) {
+            return false;
+        }
+
+        return true;
     }
 
     public async checkMessages(interaction: ChatInputCommandInteraction, requiredMessages: number): Promise<boolean> {
@@ -24,6 +32,15 @@ export class PreCleanCommand extends PreCommand {
 
         if (messages.size < requiredMessages) {
             await interaction.reply({ content: `There are not enough messages in this channel.`, ephemeral: true });
+            return false;
+        }
+
+        return true;
+    }
+
+    public async checkAmount(interaction: ChatInputCommandInteraction, requiredMessages: number): Promise<boolean> {
+        if (requiredMessages < 1 || requiredMessages > 100) {
+            await interaction.reply({content: "The amount of messages to delete must be between 1 and 100.", ephemeral: true});
             return false;
         }
 

@@ -6,7 +6,6 @@
     "build": "tsup src/index.ts --minify",
     "start": "bun run dist/index.js",
     "dev": "tsup src/index.ts --watch --onSuccess \"bun run dist/index.js\"",
-    "clean": "bun unlink",
     "format": "prettier --write \"src/**/*.{ts,js,json,md}\""
   },
   "keywords": [
