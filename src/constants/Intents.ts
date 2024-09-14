@@ -4,4 +4,4 @@ export const intents: GatewayIntentBits[] = [
 
     GatewayIntentBits.Guilds
 
-]
+];

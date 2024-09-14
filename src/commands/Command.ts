@@ -5,8 +5,9 @@ export abstract class Command {
 
     public abstract readonly name: string;
     public abstract readonly description: string;
+    public abstract options?: ApplicationCommandOptionData[];
+
     protected readonly preCommand: PreCommand;
-    public abstract options: ApplicationCommandOptionData[];
 
     protected abstract handle(interaction: ChatInputCommandInteraction, client: Client): Promise<void>;
 

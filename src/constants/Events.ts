@@ -7,4 +7,4 @@ export const events: Event[] = [
     new OnClientReadyEvent(),
     new OnInteractionEvent()
 
-]
+];
