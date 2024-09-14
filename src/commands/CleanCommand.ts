@@ -6,7 +6,6 @@ export class CleanCommand extends Command {
 
     public readonly name: string = "clean";
     public readonly description: string = "Cleans the chat by deleting a certain amount of messages.";
-    protected readonly preCommand: PreCleanCommand = new PreCleanCommand();
     public readonly options: ApplicationCommandOptionData[] = [
         {
             name: "amount",
@@ -15,6 +14,8 @@ export class CleanCommand extends Command {
             required: true
         }
     ];
+
+    protected readonly preCommand: PreCleanCommand = new PreCleanCommand();
 
     public async handle(interaction: ChatInputCommandInteraction, client: Client): Promise<void> {
         const amount = interaction.options.getInteger("amount");

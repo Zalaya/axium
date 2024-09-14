@@ -1,14 +1,14 @@
 import { Event } from "../interfaces/Event";
-import { ChatInputCommandInteraction, CommandInteraction, Interaction } from "discord.js";
+import { ChatInputCommandInteraction, CommandInteraction, Events, Interaction } from "discord.js";
 import { Command } from "../interfaces/Command";
 import { commands } from "../constants/Commands";
 
 export class OnInteractionEvent extends Event {
 
-    protected readonly name: string = "interactionCreate";
-    protected readonly once: boolean = false;
+    public readonly name: string = Events.InteractionCreate;
+    public readonly once: boolean = false;
 
-    protected async handle(interaction: Interaction): void {
+    protected async handle(interaction: Interaction): Promise<void> {
         if (!interaction.isCommand()) {
             return;
         }
