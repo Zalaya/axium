@@ -1,4 +1,4 @@
-import { PreCommand } from "../interfaces/PreCommand";
+import { PreCommand } from "../../interfaces/PreCommand";
 import { ChatInputCommandInteraction, Client, PermissionFlagsBits, TextChannel } from "discord.js";
 
 export class PreCleanCommand extends PreCommand {

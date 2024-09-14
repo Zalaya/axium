@@ -1,4 +1,4 @@
-import { Command } from "../interfaces/Command";
+import { Command } from "../../interfaces/Command";
 import { ApplicationCommandOptionData, ChatInputCommandInteraction, Client, PermissionFlagsBits, TextChannel } from "discord.js";
 import { PreCleanCommand } from "./PreCleanCommand";
 
