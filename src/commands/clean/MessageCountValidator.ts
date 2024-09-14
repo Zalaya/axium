@@ -1,4 +1,4 @@
-import { Validator } from "../Validator";
+import { Validator } from "../../core/Validator";
 import { ChatInputCommandInteraction, TextChannel } from "discord.js";
 
 export class MessageCountValidator implements Validator {

@@ -1,6 +1,6 @@
 import { ApplicationCommandOptionData, ChatInputCommandInteraction, Client, PermissionFlagsBits } from "discord.js";
-import { PreCommand } from "./PreCommand";
-import { CommandHandler } from "./CommandHandler";
+import { PreCommand } from "../commands/PreCommand";
+import { CommandHandler } from "../commands/CommandHandler";
 
 export abstract class Command {
 
@@ -9,7 +9,7 @@ export abstract class Command {
     public abstract options?: ApplicationCommandOptionData[];
 
     protected readonly preCommand: PreCommand;
-    protected readonly commandHandler: CommandHandler;
+    protected abstract readonly commandHandler: CommandHandler;
 
     public async execute(interaction: ChatInputCommandInteraction, client: Client): Promise<void> {
         if (!await this.preCommand.validate(interaction)) {

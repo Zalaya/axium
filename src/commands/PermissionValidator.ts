@@ -1,4 +1,4 @@
-import { Validator } from "./Validator";
+import { Validator } from "../core/Validator";
 import { ChatInputCommandInteraction, GuildMember } from "discord.js";
 
 export class PermissionValidator implements Validator {
