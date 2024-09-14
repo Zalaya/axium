@@ -1,6 +1,7 @@
 import { Command } from "../Command";
-import { ApplicationCommandOptionData, ChatInputCommandInteraction, Client, PermissionFlagsBits, TextChannel } from "discord.js";
+import { ApplicationCommandOptionData } from "discord.js";
 import { PreCleanCommand } from "./PreCleanCommand";
+import { CleanCommandHandler } from "./CleanCommandHandler";
 
 export class CleanCommand extends Command {
 
@@ -16,18 +17,6 @@ export class CleanCommand extends Command {
     ];
 
     protected readonly preCommand: PreCleanCommand = new PreCleanCommand();
-
-    public async handle(interaction: ChatInputCommandInteraction, client: Client): Promise<void> {
-        const amount = interaction.options.getInteger("amount");
-
-        try {
-            const channel = interaction.channel as TextChannel;
-
-            await channel.bulkDelete(amount + 1);
-            await interaction.reply({ content: `Deleted ${amount} messages.`, ephemeral: true });
-        } catch (error) {
-            await interaction.reply({ content: "Couldn't delete messages.", ephemeral: true });
-        }
-    }
+    protected readonly commandHandler: CleanCommandHandler = new CleanCommandHandler();
 
 }
