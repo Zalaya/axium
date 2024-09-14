@@ -1,10 +1,12 @@
 import { Command } from "../interfaces/Command";
-import { ApplicationCommandOptionData, Client, CommandInteraction, PermissionFlagsBits, TextChannel } from "discord.js";
+import { ApplicationCommandOptionData, ChatInputCommandInteraction, Client, PermissionFlagsBits, TextChannel } from "discord.js";
+import { PreCleanCommand } from "./PreCleanCommand";
 
 export class CleanCommand extends Command {
 
     public readonly name: string = "clean";
     public readonly description: string = "Cleans the chat by deleting a certain amount of messages.";
+    protected readonly preCommand: PreCleanCommand = new PreCleanCommand();
     public readonly options: ApplicationCommandOptionData[] = [
         {
             name: "amount",
@@ -13,13 +15,9 @@ export class CleanCommand extends Command {
             required: true
         }
     ];
-    private readonly permissions: PermissionFlagsBits[] = [
-        PermissionFlagsBits.ManageMessages,
-        PermissionFlagsBits.ReadMessageHistory
-    ];
 
-    public async handle(interaction: CommandInteraction, client: Client): Promise<void> {
-        const amount = interaction.options.get("amount")?.value as number;
+    public async handle(interaction: ChatInputCommandInteraction, client: Client): Promise<void> {
+        const amount = interaction.options.getInteger("amount");
 
         try {
             const channel = interaction.channel as TextChannel;
