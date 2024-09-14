@@ -1,4 +1,4 @@
-import { Event } from "../interfaces/Event";
+import { Event } from "../Event";
 import { Client, Events } from "discord.js";
 
 export class OnClientReadyEvent extends Event {

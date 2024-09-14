@@ -1,7 +1,7 @@
 import { Client } from "discord.js";
 import { events } from "../constants/Events";
 
-export class EventService {
+export class EventRegistrar {
 
     private readonly client: Client;
 

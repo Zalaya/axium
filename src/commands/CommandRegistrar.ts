@@ -1,7 +1,7 @@
 import { Client, REST, Routes } from "discord.js";
 import { commands } from "../constants/Commands";
 
-export class CommandService {
+export class CommandRegistrar {
 
     private readonly client: Client;
 

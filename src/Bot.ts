@@ -1,18 +1,18 @@
 import { Client } from "discord.js";
 import { intents } from "./constants/Intents";
-import { EventService } from "./services/EventService";
-import { CommandService } from "./services/CommandService";
+import { EventRegistrar } from "./events/EventRegistrar";
+import { CommandRegistrar } from "./commands/CommandRegistrar";
 
 export class Bot {
 
     private readonly client: Client;
-    private readonly commandService: CommandService;
-    private readonly eventService: EventService;
+    private readonly commandService: CommandRegistrar;
+    private readonly eventService: EventRegistrar;
 
     public constructor() {
         this.client = new Client({ intents: intents });
-        this.commandService = new CommandService(this.client);
-        this.eventService = new EventService(this.client);
+        this.commandService = new CommandRegistrar(this.client);
+        this.eventService = new EventRegistrar(this.client);
     }
 
     public async start(): Promise<void> {
