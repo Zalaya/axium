@@ -1,4 +1,4 @@
-import { Validator } from "../shared/Validator";
+import { Validator } from "../../shared/Validator";
 import { ChatInputCommandInteraction } from "discord.js";
 
 export class ChannelValidator implements Validator{
