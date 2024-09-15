@@ -1,5 +1,5 @@
 {
-  "name": "moderation-bot",
+  "name": "bot-template",
   "version": "0.1.0",
   "main": "index.ts",
   "scripts": {
