@@ -1,7 +1,7 @@
-import { Validator } from "../../core/Validator";
+import { Validator } from "../../shared/Validator";
 import { ChatInputCommandInteraction, CommandInteraction } from "discord.js";
 import { commands } from "../../constants/Commands";
-import { Command } from "../../core/Command";
+import { Command } from "../../commands/Command";
 
 export class CommandValidator implements Validator {
 

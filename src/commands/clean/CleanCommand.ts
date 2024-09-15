@@ -1,4 +1,4 @@
-import { Command } from "../../core/Command";
+import { Command } from "../Command";
 import { ApplicationCommandOptionData } from "discord.js";
 import { PreCleanCommand } from "./PreCleanCommand";
 import { CleanCommandHandler } from "./CleanCommandHandler";

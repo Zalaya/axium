@@ -1,6 +1,6 @@
 import { PreCommand } from "../PreCommand";
 import { PermissionFlagsBits } from "discord.js";
-import { Validator } from "../../core/Validator";
+import { Validator } from "../../shared/Validator";
 import { PermissionValidator } from "../PermissionValidator";
 import { ChannelValidator } from "../ChannelValidator";
 import { AmountValidator } from "./AmountValidator";

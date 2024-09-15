@@ -1,4 +1,4 @@
-import { Validator } from "../core/Validator";
+import { Validator } from "../shared/Validator";
 import { ChatInputCommandInteraction } from "discord.js";
 
 export abstract class PreCommand {

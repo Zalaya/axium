@@ -1,9 +1,9 @@
 import { ChatInputCommandInteraction, CommandInteraction, Interaction } from "discord.js";
 import { EventHandler } from "../EventHandler";
 import { commands } from "../../constants/Commands";
-import { Command } from "../../core/Command";
+import { Command } from "../../commands/Command";
 
-export class OnInteractionCreateEventHandler implements EventHandler {
+export class InteractionCreateEventHandler implements EventHandler {
 
     protected async handle(interaction: Interaction): Promise<void> {
         const command = commands.find((command: Command) => command.name === (interaction as CommandInteraction).commandName);

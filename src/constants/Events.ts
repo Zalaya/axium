@@ -1,10 +1,10 @@
-import { Event} from "../core/Event";
-import { OnInteractionCreateEvent } from "../events/interaction-create/OnInteractionCreateEvent";
-import { OnClientReadyEvent } from "../events/client-ready/OnClientReadyEvent";
+import { Event} from "../events/Event";
+import { InteractionCreateEvent } from "../events/interaction-create/InteractionCreateEvent";
+import { ClientReadyEvent } from "../events/client-ready/ClientReadyEvent";
 
 export const events: Event[] = [
 
-    new OnClientReadyEvent(),
-    new OnInteractionCreateEvent()
+    new ClientReadyEvent(),
+    new InteractionCreateEvent()
 
 ];

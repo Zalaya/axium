@@ -1,6 +1,6 @@
 import { ApplicationCommandOptionData, ChatInputCommandInteraction, Client, PermissionFlagsBits } from "discord.js";
-import { PreCommand } from "../commands/PreCommand";
-import { CommandHandler } from "../commands/CommandHandler";
+import { PreCommand } from "./PreCommand";
+import { CommandHandler } from "./CommandHandler";
 
 export abstract class Command {
 

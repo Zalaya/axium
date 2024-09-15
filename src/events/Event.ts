@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
-import { EventHandler } from "../events/EventHandler";
-import { PreEvent } from "../events/PreEvent";
+import { EventHandler } from "./EventHandler";
+import { PreEvent } from "./PreEvent";
 
 export abstract class Event {
 
