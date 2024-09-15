@@ -1,5 +1,5 @@
 export interface EventHandler {
 
-    handle(...args: any[]): void;
+    handle(...args: any[]): Promise<void>;
 
 }
