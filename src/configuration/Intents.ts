@@ -1,7 +1,7 @@
 import { GatewayIntentBits } from "discord.js";
 
-export const intents: GatewayIntentBits[] = [
+export const INTENTS: GatewayIntentBits[] = [
 
     GatewayIntentBits.Guilds
 
-];
+]
