@@ -1,7 +1,5 @@
 import { Event } from "../Event";
-import { Events } from "discord.js";
-import { EventHandler } from "../EventHandler";
-import { ClientReadyEventHandler } from "./ClientReadyEventHandler";
+import {Client, Events} from "discord.js";
 import { PreEvent } from "../PreEvent";
 import { PreClientReadyEvent } from "./PreClientReadyEvent";
 
@@ -11,6 +9,9 @@ export class ClientReadyEvent extends Event {
     public readonly once: boolean = true;
 
     protected readonly preEvent: PreEvent = new PreClientReadyEvent();
-    protected readonly eventHandler: EventHandler = new ClientReadyEventHandler();
+
+    protected async handle(client: Client): Promise<void> {
+        console.log(`The client is ready! Logged in as ${client.user?.tag}.`);
+    }
 
 }

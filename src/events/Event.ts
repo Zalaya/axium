@@ -1,5 +1,4 @@
 import { Client } from "discord.js";
-import { EventHandler } from "./EventHandler";
 import { PreEvent } from "./PreEvent";
 
 export abstract class Event {
@@ -8,7 +7,8 @@ export abstract class Event {
     protected abstract readonly once: boolean = false;
 
     protected abstract readonly preEvent: PreEvent;
-    protected abstract readonly eventHandler: EventHandler;
+
+    protected abstract handle(...args): Promise<void>;
 
     public register(client: Client): void {
         if (this.once) {
@@ -23,7 +23,7 @@ export abstract class Event {
             return;
         }
 
-        await this.eventHandler.handle(...args);
+        await this.handle(...args);
     }
 
 }
