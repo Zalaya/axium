@@ -1,6 +1,6 @@
-import { Guardian } from "../shared/Guardian";
+import { Guardian } from "../interfaces/Guardian";
 import { Client } from "discord.js";
-import { Handler } from "../shared/Handler";
+import { Handler } from "../interfaces/Handler";
 import { EventPipeline } from "./EventPipeline";
 
 export abstract class EventListener {

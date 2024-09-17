@@ -1,6 +1,6 @@
-import { Guardian } from "../shared/Guardian";
-import { Handler } from "../shared/Handler";
-import { Pipeline } from "../shared/Pipeline";
+import { Guardian } from "../interfaces/Guardian";
+import { Handler } from "../interfaces/Handler";
+import { Pipeline } from "../interfaces/Pipeline";
 
 export class EventPipeline implements Pipeline {
 

@@ -1,7 +1,9 @@
 import { Client } from "discord.js";
-import { INTENTS } from "./configuration/Intents";
-import { PRESENCE } from "./configuration/Presence";
-import { PARTIALS } from "./configuration/Partials";
+import { INTENTS } from "./constants/Intents";
+import { PRESENCE } from "./constants/Presence";
+import { PARTIALS } from "./constants/Partials";
+import { EVENT_LISTENERS } from "../shared/constants/EventListeners";
+import { EventListener } from "../shared/events/EventListener";
 
 export class Bot {
 
@@ -13,6 +15,8 @@ export class Bot {
             presence: PRESENCE,
             partials: PARTIALS
         });
+
+        this.registerEventListeners();
     }
 
     public async start(): Promise<void> {
@@ -21,6 +25,12 @@ export class Bot {
         } catch (error) {
             console.error(`An error occurred while trying to start the bot: ${error}`);
         }
+    }
+
+    private registerEventListeners(): void {
+        EVENT_LISTENERS.forEach((listener: EventListener) => {
+            listener.register(this.client);
+        })
     }
 
 }
