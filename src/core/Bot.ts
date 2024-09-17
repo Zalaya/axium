@@ -1,5 +1,7 @@
 import { Client } from "discord.js";
 import { INTENTS } from "./configuration/Intents";
+import { PRESENCE } from "./configuration/Presence";
+import { PARTIALS } from "./configuration/Partials";
 
 export class Bot {
 
@@ -7,7 +9,9 @@ export class Bot {
 
     public constructor() {
         this.client = new Client({
-            intents: INTENTS
+            intents: INTENTS,
+            presence: PRESENCE,
+            partials: PARTIALS
         });
     }
 
@@ -15,7 +19,7 @@ export class Bot {
         try {
             await this.client.login(process.env.BOT_TOKEN);
         } catch (error) {
-            console.error(`An error occurred while trying to start the bot: {error}`);
+            console.error(`An error occurred while trying to start the bot: ${error}`);
         }
     }
 
