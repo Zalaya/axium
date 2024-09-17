@@ -11,14 +11,12 @@ export abstract class EventListener {
     protected abstract readonly handler: Handler;
 
     public register(client: Client): void {
+        const pipeline = new EventPipeline(this.guardians, this.handler);
+
         if (this.once) {
-            client.once(this.name, async (...args: any[]) => {
-                await new EventPipeline(this.guardians, this.handler).process(...args);
-            })
+            client.once(this.name, async (...args: any[]) => await pipeline.process(...args));
         } else {
-            client.on(this.name, async (...args: any[]) => {
-                await new EventPipeline(this.guardians, this.handler).process(...args);
-            })
+            client.on(this.name, async (...args: any[]) => await pipeline.process(...args));
         }
     }
 
