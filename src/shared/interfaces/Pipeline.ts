@@ -1,5 +1,5 @@
 export interface Pipeline {
 
-    process(...args: any[]): Promise<void>;
+    execute(...args: any[]): Promise<void>;
 
 }

@@ -1,4 +1,4 @@
-import { Handler } from "../../shared/interfaces/Handler";
+import { Handler } from "../../../shared/interfaces/Handler";
 import { Client } from "discord.js";
 
 export class ClientReadyEventHandler implements Handler {

@@ -12,7 +12,7 @@ export class EventPipeline implements Pipeline {
         this.handler = handler;
     }
 
-    public async process(...args: any[]): Promise<void> {
+    public async execute(...args: any[]): Promise<void> {
         for (const guardian of this.guardians) {
             if (!await guardian.guard(...args)) {
                 return;
