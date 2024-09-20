@@ -1,6 +1,6 @@
 import { EventListener } from "../../../shared/events/EventListener";
 import { Events } from "discord.js";
-import { ClientReadyEventHandler } from "./ClientReadyEventHandler";
+import { ClientReadyEventHandler } from "./pipelines/ClientReadyEventHandler";
 import { EventPipeline } from "../../../shared/events/EventPipeline";
 
 export class ClientReadyEventListener extends EventListener {
