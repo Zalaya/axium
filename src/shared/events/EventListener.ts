@@ -1,11 +1,11 @@
 import { Client } from "discord.js";
-import { EventPipeline } from "./EventPipeline";
+import { Pipeline } from "../interfaces/Pipeline";
 
 export abstract class EventListener {
 
     protected abstract readonly name: string;
     protected abstract readonly once: boolean;
-    protected abstract readonly pipeline: EventPipeline;
+    protected abstract readonly pipeline: Pipeline;
 
     public register(client: Client): void {
         const notifier = async (...args: any[]) => await this.pipeline.execute(...args);
