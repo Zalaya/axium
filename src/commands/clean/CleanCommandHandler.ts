@@ -7,9 +7,11 @@ export class CleanCommandHandler implements Handler {
         const amount = interaction.options.getInteger("amount", true);
         const messages = await interaction.channel?.messages.fetch({ limit: amount });
 
-        await interaction.channel?.bulkDelete(messages)
-            .then(() => interaction.reply({ content: `Successfully deleted ${messages?.size} messages.`, ephemeral: true }))
-            .catch(() => interaction.reply({ content: "An error occurred while trying to delete messages.", ephemeral: true }));
+        await interaction.channel?.bulkDelete(messages).then(() => {
+            interaction.reply({content: `Successfully deleted ${messages?.size} messages.`, ephemeral: true})
+        }).catch(() => {
+            interaction.reply({content: "An error occurred while trying to delete messages.", ephemeral: true})
+        });
     }
 
 }

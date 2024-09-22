@@ -1,6 +1,6 @@
-import { Handler } from "../../../shared/interfaces/Handler";
+import { Handler } from "../../shared/interfaces/Handler";
 import { ChatInputCommandInteraction, Interaction } from "discord.js";
-import { COMMAND_LISTENERS } from "../../../shared/constants/CommandListeners";
+import { COMMAND_LISTENERS } from "../../shared/constants/CommandListeners";
 
 export class InteractionCreateEventHandler implements Handler {
 

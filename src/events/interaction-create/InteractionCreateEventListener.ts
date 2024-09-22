@@ -1,8 +1,8 @@
-import { EventListener } from "../../../shared/events/EventListener";
-import { EventPipeline } from "../../../shared/events/EventPipeline";
+import { EventListener } from "../../shared/events/EventListener";
+import { EventPipeline } from "../../shared/events/EventPipeline";
 import { Events } from "discord.js";
 import { InteractionCreateEventHandler } from "./InteractionCreateEventHandler";
-import { ChannelGuardian } from "../../../shared/guardians/ChannelGuardian";
+import { ChannelGuardian } from "../../shared/guardians/ChannelGuardian";
 
 export class InteractionCreateEventListener extends EventListener {
 

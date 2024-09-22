@@ -16,14 +16,12 @@ export class Bot {
     }
 
     public async start(): Promise<void> {
-        await this.client.login(process.env.BOT_TOKEN)
-            .then(async () => {
-                EventRegistrar.register(this.client);
-                await CommandRegistrar.register();
-            })
-            .catch((error) => {
-                console.error(`An error occurred while trying to start the bot: ${error}`);
-            });
+        await this.client.login(process.env.BOT_TOKEN).then(async () => {
+            EventRegistrar.register(this.client);
+            await CommandRegistrar.register();
+        }).catch((error) => {
+            console.error(`An error occurred while trying to start the bot: ${error}`);
+        });
     }
 
 }
