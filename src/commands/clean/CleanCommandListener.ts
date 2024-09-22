@@ -12,6 +12,8 @@ export class CleanCommandListener extends CommandListener {
             .setName("amount")
             .setDescription("The amount of messages to delete.")
             .setRequired(true)
+            .setMinValue(1)
+            .setMaxValue(100)
         )
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages);
 
