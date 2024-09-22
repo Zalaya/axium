@@ -2,7 +2,6 @@ import { CommandListener } from "../../shared/commands/CommandListener";
 import { CommandPipeline } from "../../shared/commands/CommandPipeline";
 import { CleanCommandHandler } from "./CleanCommandHandler";
 import { PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
-import { ChannelGuardian } from "../../shared/guardians/ChannelGuardian";
 
 export class CleanCommandListener extends CommandListener {
 
@@ -16,7 +15,7 @@ export class CleanCommandListener extends CommandListener {
         )
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages);
 
-    protected readonly pipeline = new CommandPipeline([ new ChannelGuardian() ], new CleanCommandHandler());
+    protected readonly pipeline = new CommandPipeline([], new CleanCommandHandler());
 
 
 }
