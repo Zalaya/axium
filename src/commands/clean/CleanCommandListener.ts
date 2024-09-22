@@ -6,7 +6,7 @@ import { ChannelGuardian } from "../../shared/guardians/ChannelGuardian";
 
 export class CleanCommandListener extends CommandListener {
 
-    protected readonly builder = new SlashCommandBuilder()
+    public readonly builder = new SlashCommandBuilder()
         .setName("clean")
         .setDescription("Cleans the chat by deleting a certain amount of messages.")
         .addIntegerOption(option => option
@@ -15,6 +15,8 @@ export class CleanCommandListener extends CommandListener {
             .setRequired(true)
         )
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages);
+
     protected readonly pipeline = new CommandPipeline([ new ChannelGuardian() ], new CleanCommandHandler());
+
 
 }
