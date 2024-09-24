@@ -1,0 +1,21 @@
+{
+  "name": "axium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "keywords": [
+    "Axium",
+    "Discord",
+    "Bot",
+    "Multi-purpose",
+    "Moderation",
+    "Fun",
+    "Utility",
+    "Community"
+  ],
+  "author": "Zalaya",
+  "license": "ISC",
+  "description": "A versatile multipurpose Discord Bot built to manage multiple servers, ensuring a safe, organized, and dynamic community with flexible features for moderation and more."
+}
