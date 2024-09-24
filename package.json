@@ -2,7 +2,10 @@
   "name": "axium",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env ."
+  },
   "keywords": [
     "Axium",
     "Discord",
