@@ -4,10 +4,10 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds
     ]
-})
+});
 
 client.login(process.env.TOKEN).then(() => {
-    console.log("The bot is logged in!")
+    console.log("The bot is logged in!");
 }).catch((error) => {
-    console.error(error)
-})
+    console.error(error);
+});
