@@ -4,9 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env .",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "start": "node --env-file=.env ."
   },
   "keywords": [
     "Axium",
@@ -22,10 +20,6 @@
   "license": "MIT",
   "description": "Just a Discord bot.",
   "dependencies": {
-    "discord.js": "^14.16.2"
-  },
-  "devDependencies": {
-    "eslint": "^9.11.1",
-    "globals": "^15.9.0"
+    "discord.js": "^14.16.3"
   }
 }
