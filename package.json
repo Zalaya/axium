@@ -1,25 +1,30 @@
 {
   "name": "axium",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.0-SNAPSHOT",
+  "private": true,
+  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "Axium",
-    "Discord",
     "Bot",
-    "Multi-purpose",
+    "Discord",
+    "TypeScript",
     "Moderation",
     "Fun",
-    "Utility",
-    "Community"
+    "Utility"
   ],
   "author": "Zalaya",
-  "license": "MIT",
-  "description": "Just a Discord bot.",
+  "license": "ISC",
+  "description": "Just a simple bot for Discord",
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
   "dependencies": {
-    "discord.js": "^14.16.3"
+    "discord.js": "^14.16.3",
+    "discordx": "^11.12.1"
   }
 }

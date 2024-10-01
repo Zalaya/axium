@@ -1,5 +1,17 @@
+### IDE configuration directories ###
+
 .idea/
-node_modules/
+.vscode/
+
+### IDE configuration files ###
 
 *.iml
-.env
+
+### Node.js ###
+
+node_modules/
+dist/
+
+### TypeScript ###
+
+*.tsbuildinfo
