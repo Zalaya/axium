@@ -7,7 +7,11 @@
         "build": "tsc",
         "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
     },
-    "keywords": [],
+    "keywords": [
+        "Discord",
+        "Bot",
+        "TypeScript"
+    ],
     "author": "Zalaya",
     "license": "ISC",
     "description": "Just a simple Discord bot.",

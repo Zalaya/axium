@@ -15,3 +15,7 @@ dist/
 ### TypeScript ###
 
 *.tsbuildinfo
+
+### Private keys ###
+
+.env
