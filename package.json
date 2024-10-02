@@ -1,0 +1,24 @@
+{
+    "name": "axium",
+    "version": "1.0.0-SNAPSHOT",
+    "main": "index.ts",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "build": "tsc",
+        "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    },
+    "keywords": [],
+    "author": "Zalaya",
+    "license": "ISC",
+    "description": "Just a simple Discord bot.",
+    "dependencies": {
+        "discord.js": "^14.16.3",
+        "discordx": "^11.12.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.7.4",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.6.2"
+    }
+}
