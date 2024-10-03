@@ -11,17 +11,12 @@
         "strict": true,
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
-        "module": "NodeNext",
-        "outDir": "dist",
-        "lib": [
-            "es2022"
-        ]
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "lib": ["es2022"]
     },
-    "include": [
-        "**/*.ts",
-        "**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }

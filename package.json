@@ -1,16 +1,19 @@
 {
-  "name": "axium",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/node": "^22.7.4",
-    "ts-node": "^10.9.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "discord.js": "^14.16.3"
-  }
+    "name": "axium",
+    "module": "src/index.ts",
+    "type": "module",
+    "scripts": {
+        "start": "tsx ./src/index.ts"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^22.7.4",
+        "tsx": "^4.19.1"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "discord.js": "^14.16.3"
+    }
 }
