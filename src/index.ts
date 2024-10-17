@@ -1,1 +1,3 @@
-console.log("Hello via Bun!");
+import { Bot } from "./core/Bot";
+
+new Bot().start();

@@ -13,4 +13,8 @@ export class Bot {
         });
     }
 
+    public async start(): Promise<void> {
+        await this.client.login(process.env.BOT_TOKEN);
+    }
+
 }
